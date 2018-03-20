@@ -1,1 +1,1 @@
-# hackaton-web-CGI-2018
+# hackathon-web-CGI-2018
