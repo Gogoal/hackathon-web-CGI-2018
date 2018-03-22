@@ -7,8 +7,7 @@ import { DetailComponent } from './component/detail/detail.component';
 export const ROUTES: Routes = [
     { path: '', component: NewsComponent,
         children: [
-            { path: '', component: ListComponent },
-            { path: ':rubrique', redirectTo: ':rubrique/0', pathMatch: 'full' },
+            { path: ':rubrique', component: ListComponent },
             { path: ':rubrique/:id', component: DetailComponent },
         ]
     }

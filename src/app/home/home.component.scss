@@ -11,8 +11,10 @@
 }
 
 .mainCat {
-    background-color: red;
+   // background-color: red;
     height: 34%;
+    border-bottom: 5px solid #49138B;
+    position: relative;
 }
 
 .catWrapper {
@@ -28,13 +30,14 @@
 .catItem {
     width: 50vw;
     height: 30vh;
+    position: relative;
 }
 
 
 .customFooter {
     position: fixed;
     bottom: 0;
-    height: 6vh;
-    background-color: blue;
+    height: 5.2vh;
+    background-color: #FFAD00;
     width: 100%;
 }
