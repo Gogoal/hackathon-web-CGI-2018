@@ -8,7 +8,8 @@ export const ROUTES: Routes = [
     { path: '', component: NewsComponent,
         children: [
             { path: '', component: ListComponent },
-            { path: ':id', component: DetailComponent },
+            { path: ':rubrique', redirectTo: ':rubrique/0', pathMatch: 'full' },
+            { path: ':rubrique/:id', component: DetailComponent },
         ]
     }
 ];
