@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+@font-face {
+  font-family: main-title;
+  src: url('assets/fonts/ITCAvantGardeStd-Demi.otf');
+}
+
+@font-face {
+  font-family: title-category;
+  src: url('assets/fonts/ITCAvantGardeStd-Md.otf');
+}
+
+@font-face {
+  font-family: title-item-list;
+  src: url('assets/fonts/AkzidenzGrotesk-Light_0.otf');
+}
+
+h3 {
+  font-family: title-item-list;
+}
