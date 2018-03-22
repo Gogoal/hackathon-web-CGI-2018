@@ -1,2 +1,40 @@
 
+.container {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
 
+}
+
+.mainCat {
+    background-color: red;
+    height: 34%;
+}
+
+.catWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.catItem {
+    width: 50vw;
+    height: 30vh;
+}
+
+
+.customFooter {
+    position: fixed;
+    bottom: 0;
+    height: 6vh;
+    background-color: blue;
+    width: 100%;
+}
