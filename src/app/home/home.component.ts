@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { ImagerComponent} from '../shared/component/imager/imager.component';
+import { ImagerComponent } from '../shared/component/imager/imager.component';
 import { NewsService } from '../core/service/news.service';
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls:  ['./home.component.scss']
+  styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent {
@@ -26,10 +28,12 @@ export class HomeComponent {
           console.log(err);
         }
       );
-
-
-
+    
     }
-
+  
+    //constructor(private router: Router) { }
+  goHome() {
+    //this.router.navigate(['news']);
+  }
 
 }
