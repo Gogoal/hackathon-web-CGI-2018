@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ImagerComponent} from '../shared/component/imager/imager.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
+
+  public currentImage = 'https://media.vandalimg.com/common/1200x800/2008102350.jpg';
 
     constructor() {
 

@@ -1,0 +1,16 @@
+<div [style.width]="width" [style.height]="height"  style="position: relative;">
+
+    <div *ngIf="_imgLoadedUrl && _hasSource" [ngStyle]="{'background-image': 'url(' + _imgLoadedUrl + ')'}" class="imgBg"></div>
+
+    <div *ngIf="!_imgLoadedUrl && _hasSource" class="loader" >
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+
+    <img *ngIf="_imgPreloadUrl && _hasSource" [src]="_imgPreloadUrl" (load)="_imgLoadedUrl = _imgPreloadUrl" hidden> 
+
+</div>
