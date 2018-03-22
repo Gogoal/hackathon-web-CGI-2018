@@ -27,6 +27,18 @@ export class ListComponent {
     picture: 'une autre photo badass',
     summary: 'Lorem ipsum',
     visible: true
+  }, {
+    title: 'TEST YOLO',
+    date: 'LE 1000',
+    picture: 'une autre photo badass',
+    summary: 'Lorem ipsum',
+    visible: true
+  }, {
+    title: 'TEST YOLO',
+    date: 'LE 1000',
+    picture: 'une autre photo badass',
+    summary: 'Lorem ipsum',
+    visible: true
   }];
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
