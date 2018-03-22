@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ImagerComponent } from '../shared/component/imager/imager.component';
 import { NewsService } from '../core/service/news.service';
 import { Router } from "@angular/router";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent {
   public ivg = 'assets/img/cat_ivg.png';
   public fav = 'assets/img/cat_favoris.jpg';
 
-    constructor(private newsServ: NewsService) {
+    constructor(private newsServ: NewsService, public dialog: MatDialog) {
 
       this.newsServ.getNews().subscribe(
         data => {
@@ -28,12 +29,43 @@ export class HomeComponent {
           console.log(err);
         }
       );
-    
+
     }
-  
-    //constructor(private router: Router) { }
+
   goHome() {
     //this.router.navigate(['news']);
   }
 
+  pickDataUser1() {
+    //this.router.navigate(['news']);
+  }
+
+  pickDataUser2() {
+    //this.router.navigate(['news']);
+  }
+
+  pickDataUser3() {
+    //this.router.navigate(['news']);
+  }
+
+
+  // TODO ADD A DIALOG
+  openDialog(): void {
+    let dialogRef = this.dialog.open(HomeComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
 }
+
+// @Component({
+//   selector: 'dialog-data-example-dialog',
+//   templateUrl: 'dialog-data-example-dialog.html',
+// })
+// export class DialogDataExampleDialog {
+//   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+// }
