@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 
 export class DetailComponent {
 
+  //<app-imager src="{{currentImage}}" srcMd="{{currentImage}}"srcSd="{{currentImage}}"></app-imager>
+
   public news = {
     'title': 'DRAGON BALL FighterZ (title)',
     'subtitle': 'True Power Knows No Limits ! (auteur + category + date)',
