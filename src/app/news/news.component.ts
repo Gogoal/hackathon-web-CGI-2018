@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls:  ['./news.component.scss']
+  template: '<router-outlet></router-outlet>',
 })
 
 export class NewsComponent {
