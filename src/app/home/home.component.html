@@ -7,11 +7,11 @@
             <div  >NI NO KUNI II</div>
             <div>L'avènement d'un nouveau royaume</div>
         </div>
-        
+
     </div>
     <div class="catWrapper">
         <div class="catItem">
-            
+
             <app-imager src="{{manga}}" srcMd="{{manga}}" srcSd="{{manga}}"></app-imager>
             <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
 
@@ -44,9 +44,10 @@
                 FAVORIS
             </div>
         </div>
+      <div class="full-circle"><i class="material-icons md-light iconAdd" (click)="addCategory()">add</i></div>
+
     </div>
     <div class="customFooter">
-
         <mat-grid-list cols="5" rowHeight="1.9:1">
             <mat-grid-tile>
                     <i class="material-icons md-light" (click)="goHome()">home</i>
