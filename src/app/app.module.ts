@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeModule } from './home/home.module';
+import { HomeComponent} from './home/home.component';
 import { AppComponent } from './app.component';
 import { NewsService } from './service/news.service';
 import {
@@ -39,9 +40,11 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
+  HomeModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
