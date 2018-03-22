@@ -34,10 +34,7 @@
 /coverage
 /libpeerconnection.log
 npm-debug.log
-<<<<<<< HEAD
-=======
 yarn-error.log
->>>>>>> chore: initial commit from @angular/cli
 testem.log
 /typings
 
