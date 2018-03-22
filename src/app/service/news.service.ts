@@ -7,6 +7,6 @@ export class NewsService {
 
   }
 
-}
 
+}
 
