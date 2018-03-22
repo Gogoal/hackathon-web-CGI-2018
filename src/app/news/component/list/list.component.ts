@@ -13,7 +13,7 @@ export class ListComponent {
     title: 'DBZ',
     date: 'LE 22 MARS 2018',
     picture: 'une photo badass',
-    summary: 'Lorem ipsum',
+    summary: 'Lorem ipsum ipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsum',
     visible: true
   }, {
     title: 'Witcher',
@@ -44,7 +44,7 @@ export class ListComponent {
     if (action === this.SWIPE_ACTION.RIGHT) {
       // const isLast = currentIndex === this.articles.length - 1;
       // nextIndex = isLast ? 0 : currentIndex + 1;
-      alert("J'aime !");
+      alert("Actualité dans les favoris");
     }
 
     // swipe left => je n'aime pas le profil
