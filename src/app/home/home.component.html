@@ -1,6 +1,6 @@
 <section class="container">
     <div class="mainCat">
-        <app-imager src="{{currentImage}}" srcMd="{{currentImage}}"srcSd="{{currentImage}}"></app-imager>
+        <app-imager src="{{currentImage}}" srcMd="{{currentImage}}" srcSd="{{currentImage}}"></app-imager>
     </div>
     <div class="catWrapper">
         <div class="catItem" style="background-color: green">Mobile</div>
@@ -8,6 +8,24 @@
         <div class="catItem" style="background-color: purple">IVG</div>
         <div class="catItem" style="background-color: grey">Favoris</div>
     </div>
-    <div class="customFooter">Footer</div>
-</section>
+    <div class="customFooter">
 
+        <mat-grid-list cols="5" rowHeight="1.9:1">
+            <mat-grid-tile>
+                    <i class="material-icons md-light" (click)="goHome()">home</i>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <i class="material-icons md-light">language</i>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <i class="material-icons md-light">favorite_border</i>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <i class="material-icons md-light">autorenew</i>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    <i class="material-icons md-light">perm_identity</i>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</section>
