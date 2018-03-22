@@ -15,7 +15,7 @@ export class ListComponent {
     this.newsServ.getNews().subscribe(
       data => {
         this.articles = data;
-        //console.log(data);
+        console.log(data);
       },
       err => {
         console.log(err);
