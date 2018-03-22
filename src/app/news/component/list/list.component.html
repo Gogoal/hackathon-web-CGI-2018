@@ -3,11 +3,10 @@
                  (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
                  [class.visible]="article.visible" [class.hidden]="!article.visible">
     <div mat-card-avatar class="item-img"></div>
-    <h3 matLine> {{article.title}} </h3>
-    <p matLine>
-      <span> {{article.date}} </span>
-      <span class="demo-2"> -- {{article.summary}} </span>
-    </p>
+    <!-- <img matListAvatar src="..." alt="..."> -->
+    <p class="item-date" mat-line> <span></span><span>{{article.date}}</span></p>
+    <h3 class="item-title" [class.item-title-important]="idx%4 == 0" mat-line> {{article.title}} </h3>
+    <p class="item-summary" [class.item-summary-important]="idx%4 == 0" mat-line>{{article.summary}}</p>
   </mat-list-item>
 </mat-list>
 
