@@ -4,8 +4,13 @@
 
 .item-list {
   margin:5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
+}
 
+.mat-list .mat-list-item.item-list-important {
+  height: 200px;
+  width:100%;
+  background-color:blue;
 }
 
 .item-img {
@@ -15,17 +20,45 @@
   display: inline-block;
 }
 
-.item-information {
-
+.item-img-important {
+  display:none;
 }
 
-.item-title {
-  display: inline-block;
+.mat-list .mat-list-item p.item-summary {
+  font-weight: bold;
+  font-size:16px;
 }
 
-.item-date {
-  display: inline-block;
+.mat-list .mat-list-item p.item-summary-important {
+  font-weight: bold;
+  font-size:16px;
+  color:white;
+}
 
+.mat-list .mat-list-item h3.item-title {
+  display: inline-block;
+  color: #49138B;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.mat-list .mat-list-item h3.item-title-important {
+  display: inline-block;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.mat-list .mat-list-item p.item-date {
+  display: inline-block;
+  font-size: 12px;
+  color: grey;
+}
+
+.mat-list .mat-list-item p.item-date {
+  display: inline-block;
+  font-size: 12px;
+  color: white;
 }
 
 .mat-list .mat-list-item.visible {
@@ -34,6 +67,10 @@
 
 .mat-list .mat-list-item.hidden {
   display: none;
+}
+
+.firstOne {
+
 }
 
 
