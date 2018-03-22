@@ -32,10 +32,22 @@ export class HomeComponent {
 
     }
 
-    //constructor(private router: Router) { }
   goHome() {
     //this.router.navigate(['news']);
   }
+
+  pickDataUser1() {
+    //this.router.navigate(['news']);
+  }
+
+  pickDataUser2() {
+    //this.router.navigate(['news']);
+  }
+
+  pickDataUser3() {
+    //this.router.navigate(['news']);
+  }
+
 
   // TODO ADD A DIALOG
   openDialog(): void {

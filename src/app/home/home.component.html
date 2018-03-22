@@ -62,7 +62,14 @@
                     <i class="material-icons md-light">autorenew</i>
             </mat-grid-tile>
             <mat-grid-tile>
-                    <i class="material-icons md-light">perm_identity</i>
+              <button mat-button [matMenuTriggerFor]="menu">
+                <i class="material-icons md-light">perm_identity</i>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="pickDataUser1()">User 1</button>
+                <button mat-menu-item (click)="pickDataUser2()">User 2</button>
+                <button mat-menu-item (click)="pickDataUser3()">User 3</button>
+              </mat-menu>
             </mat-grid-tile>
         </mat-grid-list>
     </div>
