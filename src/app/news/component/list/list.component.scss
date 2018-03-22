@@ -7,9 +7,10 @@
   border-bottom: 1px solid grey;
 }
 
-.item-list-important {
-  background-image: url(../../../../assets/img/test-background-color.jpg);
-  background-size: 100% 100%;
+.mat-list .mat-list-item.item-list-important {
+  height: 200px;
+  width:100%;
+  background-color:blue;
 }
 
 .item-img {
@@ -19,9 +20,19 @@
   display: inline-block;
 }
 
+.item-img-important {
+  display:none;
+}
+
 .mat-list .mat-list-item p.item-summary {
   font-weight: bold;
   font-size:16px;
+}
+
+.mat-list .mat-list-item p.item-summary-important {
+  font-weight: bold;
+  font-size:16px;
+  color:white;
 }
 
 .mat-list .mat-list-item h3.item-title {
@@ -42,7 +53,12 @@
   display: inline-block;
   font-size: 12px;
   color: grey;
+}
 
+.mat-list .mat-list-item p.item-date {
+  display: inline-block;
+  font-size: 12px;
+  color: white;
 }
 
 .mat-list .mat-list-item.visible {
