@@ -2,6 +2,10 @@
 
 # compiled output
 /dist
+<<<<<<< HEAD
+=======
+/dist-server
+>>>>>>> chore: initial commit from @angular/cli
 /tmp
 /out-tsc
 
@@ -30,6 +34,10 @@
 /coverage
 /libpeerconnection.log
 npm-debug.log
+<<<<<<< HEAD
+=======
+yarn-error.log
+>>>>>>> chore: initial commit from @angular/cli
 testem.log
 /typings
 
