@@ -56,6 +56,7 @@ export class ListComponent {
     if (action === this.SWIPE_ACTION.RIGHT) {
       // const isLast = currentIndex === this.articles.length - 1;
       // nextIndex = isLast ? 0 : currentIndex + 1;
+      localStorage.setItem('articles_favoris', JSON.stringify(this.articles[currentIndex]));
       alert("Actualité dans les favoris");
     }
 

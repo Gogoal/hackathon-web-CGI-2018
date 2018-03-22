@@ -7,13 +7,10 @@
   border-bottom: 1px solid grey;
 }
 
-.item-list-important {
-  background-image: url(../../../../assets/img/test-background-color.jpg);
-  background-size: 100% 100%;
-}
-
 .mat-list .mat-list-item.item-list-important {
   height: 200px;
+  width:100%;
+  background-color:blue;
 }
 
 .item-img {
