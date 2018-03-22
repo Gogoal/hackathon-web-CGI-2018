@@ -6,7 +6,7 @@ export const ROUTES: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'login', loadChildren: 'app/login/login.module#LoginModule'},
-  {path: 'news', loadChildren: 'app/news/news.module#CNewsModule'},
+  {path: 'news', loadChildren: 'app/news/news.module#NewsModule'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
