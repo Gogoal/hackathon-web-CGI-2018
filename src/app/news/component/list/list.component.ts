@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {NewsService} from "../../../core/service/news.service";
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,39 +9,24 @@ import { Component } from '@angular/core';
 })
 
 export class ListComponent {
-  constructor() {}
+  public articles;
 
-  articles = [{
-    title: 'DBZ',
-    date: 'LE 22 MARS 2018',
-    picture: 'une photo badass',
-    summary: 'Lorem ipsum ipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsum',
-    visible: true
-  }, {
-    title: 'Witcher',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }, {
-    title: 'TEST YOLO',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }, {
-    title: 'TEST YOLO',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }, {
-    title: 'TEST YOLO',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }];
+  constructor(private newsServ: NewsService, private activatedRoute: ActivatedRoute) {
+    this.newsServ.getNews().subscribe(
+      data => {
+        this.articles = data;
+        //console.log(data);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+      console.log(params);
+    });
+  }
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
