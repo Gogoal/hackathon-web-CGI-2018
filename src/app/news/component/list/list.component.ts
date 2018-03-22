@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {NewsService} from "../../../core/service/news.service";
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -7,39 +9,24 @@ import { Component } from '@angular/core';
 })
 
 export class ListComponent {
-  constructor() {}
+  public articles;
 
-  articles = [{
-    title: 'DBZ',
-    date: 'LE 22 MARS 2018',
-    picture: 'une photo badass',
-    summary: 'Lorem ipsum ipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsumipsum',
-    visible: true
-  }, {
-    title: 'Witcher',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }, {
-    title: 'TEST YOLO',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }, {
-    title: 'TEST YOLO',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }, {
-    title: 'TEST YOLO',
-    date: 'LE 1000',
-    picture: 'une autre photo badass',
-    summary: 'Lorem ipsum',
-    visible: true
-  }];
+  constructor(private newsServ: NewsService, private activatedRoute: ActivatedRoute) {
+    this.newsServ.getNews().subscribe(
+      data => {
+        this.articles = data;
+        //console.log(data);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
+    // subscribe to router event
+    this.activatedRoute.params.subscribe((params: Params) => {
+      console.log(params);
+    });
+  }
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
@@ -47,7 +34,7 @@ export class ListComponent {
   swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {
     // out of range
     if (currentIndex > this.articles.length || currentIndex < 0){
-      return;
+        return;
     }
 
     let nextIndex = 0;
@@ -56,7 +43,16 @@ export class ListComponent {
     if (action === this.SWIPE_ACTION.RIGHT) {
       // const isLast = currentIndex === this.articles.length - 1;
       // nextIndex = isLast ? 0 : currentIndex + 1;
-      localStorage.setItem('articles_favoris', JSON.stringify(this.articles[currentIndex]));
+      if (JSON.parse(localStorage.getItem('articles_favoris')) !== null) {
+        var values = JSON.parse(localStorage.getItem('articles_favoris'));
+
+        // TODO DON'T SET NEW ITEM IF IS ALREADY INSIDE OBJECT
+        values.push(this.articles[currentIndex]);
+        localStorage.setItem('articles_favoris', JSON.stringify(values));
+      } else {
+        localStorage.setItem('articles_favoris', JSON.stringify([this.articles[currentIndex]]));
+      };
+
       alert("Actualité dans les favoris");
     }
 
@@ -64,6 +60,15 @@ export class ListComponent {
     if (action === this.SWIPE_ACTION.LEFT) {
       // const isFirst = currentIndex === 0;
       // nextIndex = isFirst ? this.articles.length - 1 : currentIndex - 1;
+      if (JSON.parse(localStorage.getItem('articles_favoris')) !== null) {
+        var values = JSON.parse(localStorage.getItem('articles_favoris'));
+
+        // TODO REMOVE THE RIGHT ID AND SET ONLY IF IS NOT EMPTY
+        console.log("test");
+      } else {
+        console.log("test");
+      };
+
       this.articles[currentIndex].visible = false;
     }
 
