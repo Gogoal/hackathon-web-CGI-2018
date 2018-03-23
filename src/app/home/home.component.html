@@ -1,50 +1,27 @@
 <section class="container">
     <div class="mainCat">
-        <app-imager src="{{bandai}}" srcMd="{{bandai}}" srcSd="{{bandai}}"></app-imager>
+        <app-imager src="{{mainCategory?.news.picture}}" srcMd="{{mainCategory?.news.picture}}" srcSd="{{mainCategory?.news.picture}}"></app-imager>
         <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
-        <div style="position: absolute;z-index: 3;bottom: 0;left:10px;color: white">BANDAI NAMCO</div>
+        <div style="position: absolute;z-index: 3;bottom: 0;left:10px;color: white;text-transform: uppercase">{{mainCategory?.displayName}}</div>
         <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;top:0;padding-left: 10px">
-            <div  >NI NO KUNI II</div>
-            <div>L'avènement d'un nouveau royaume</div>
+            <div style="max-width: 200px;">{{mainCategory?.news.title}}</div>
         </div>
 
     </div>
     <div class="catWrapper">
-        <div class="catItem">
 
-            <app-imager src="{{manga}}" srcMd="{{manga}}" srcSd="{{manga}}"></app-imager>
+        <div *ngFor="let cat of categories; let i = index" class="catItem" >
+            
+            <app-imager src="{{cat.picture}}" srcMd="{{cat.picture}}" srcSd="{{cat.picture}}"></app-imager>
+
             <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
-
-            <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;top:0;padding-left: 10px">
-                MANGA/ANIME
-            </div>
-
-        </div>
-        <div class="catItem">
-            <app-imager src="{{mobile}}" srcMd="{{mobile}}" srcSd="{{mobile}}"></app-imager>
-            <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
-
-            <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;top:0;padding-left: 10px">
-                MOBILE
-            </div>
-        </div>
-        <div class="catItem">
-            <app-imager src="{{ivg}}" srcMd="{{ivg}}" srcSd="{{ivg}}"></app-imager>
-            <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
-
+            <i (click)="onSuppCat(i)" *ngIf="cat.name !== 'favoris'" style="position: absolute;z-index: 5;right: 20px;top:20px;color: white" class="material-icons">favorite</i>
             <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;top:0;">
-                IVG
+                <span style="text-transform: uppercase">{{cat.displayName}}</span>
             </div>
-        </div>
-        <div class="catItem">
-            <app-imager src="{{fav}}" srcMd="{{fav}}" srcSd="{{fav}}"></app-imager>
-            <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
 
-            <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;top:0;">
-                FAVORIS
-            </div>
         </div>
-
+    
       <div class="full-circle"><i class="material-icons md-light iconAdd" (click)="addCategory()">add</i></div>
       <img *ngIf="boolBandai" class="bandai-logo-easter-eggs" id="elementToSlide" src="../../assets/img/bandai-animated.svg">
       <img *ngIf="boolSheronGif" class="sheronGif" src="../../assets/img/sheronGif.gif">
@@ -78,11 +55,11 @@
                 <i class="material-icons md-light">perm_identity</i>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="pickDataUser1()">User 1</button>
-                <button mat-menu-item (click)="pickDataUser2()">User 2</button>
-                <button mat-menu-item (click)="pickDataUser3()">User 3</button>
+                <button *ngFor="let user of users; let i = index" mat-menu-item (click)="userClick(i)">{{user.first_name}}</button>
+              
               </mat-menu>
             </mat-grid-tile>
         </mat-grid-list>
+
     </div>
 </section>

@@ -1,0 +1,141 @@
+[{  
+   "first_name":"Oliver",
+   "last_name":"Motorville",
+   "birthday":"22 mars 2005",
+   "login":"Olivier",
+   "password":"Oliver",
+   "language":"french",
+   "tags":[
+      {
+         "tag":"Ni no kuni",
+         "weight":1000
+      },
+      {  
+         "tag":"Sword Art Online",
+         "weight":1000
+      },
+      {  
+         "tag":"Naruto",
+         "weight":1000
+      },
+      {  
+         "tag":"Manga",
+         "weight":1000
+      },
+      {  
+         "tag":"rpg",
+         "weight":1000
+      },
+      {  
+         "tag":"Namco",
+         "weight":1000
+      }
+   ]
+},{  
+   "first_name":"Lumi",
+   "last_name":"Grand monarque",
+   "birthday":"1 janvier 1000",
+   "login":"Lumi",
+   "password":"Lumi",
+   "language":"french",
+   "tags":[  
+      {  
+         "tag":"Ni no kuni",
+         "weight":3100
+      },
+      {  
+         "tag":"Manga",
+         "weight":6200
+      },
+      {  
+         "tag":"Magie",
+         "weight":5650
+      },
+      {  
+         "tag":"Namco",
+         "weight":1800
+      },
+      {  
+         "tag":"jeux vidéos",
+         "weight":1200
+      },
+      {  
+         "tag":"alliance",
+         "weight":-60
+      },
+      {  
+         "tag":"industrie",
+         "weight":-120
+      },
+      {  
+         "tag":"oav",
+         "weight":-200
+      },
+      {  
+         "tag":"goku",
+         "weight":100
+      },
+      {  
+         "tag":"dragon ball super",
+         "weight":50
+      }
+   ]
+},{  
+   "first_name":"Neo",
+   "last_name":"Elu",
+   "birthday":"1 janvier 3000",
+   "login":"Neo",
+   "password":"Neo",
+   "language":"french",
+   "tags":[  
+      {  
+         "tag":"matrix",
+         "weight":3100
+      },
+      {  
+         "tag":"Manga",
+         "weight":1200
+      },
+      {  
+         "tag":"Magie",
+         "weight":1120
+      },
+      {  
+         "tag":"Namco",
+         "weight":1600
+      },
+      {  
+         "tag":"ubisoft",
+         "weight":750
+      },
+      {  
+         "tag":"jeux vidéos",
+         "weight":4200
+      },
+      {  
+         "tag":"alliance",
+         "weight":-60
+      },
+      {  
+         "tag":"industrie",
+         "weight":3250
+      },
+      {  
+         "tag":"oav",
+         "weight":-200
+      },
+      {  
+         "tag":"goku",
+         "weight":100
+      },
+      {  
+         "tag":"dragon ball super",
+         "weight":50
+      },
+      {  
+         "tag":"war games",
+         "weight":4100
+      }
+   ]
+}
+]

@@ -1,14 +1,14 @@
 <mat-list class="container-list">
   <mat-list-item class="item-list" *ngFor="let article of articles; let idx=index"
                  (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
-                 [class.visible]="article.visible" [class.hidden]="!article.visible"
-                 [class.item-list-important]="idx%4 == 0">
-    <div mat-card-avatar class="item-img" [class.item-img-important]="idx%4 == 0">
-      <img src="{{article.picture}}">
+
+                 [ngClass]="idx==0 ? 'item-list-important' : 'item-list'">
+    <div mat-card-avatar [ngClass]="idx==0 ? 'item-img-important' : 'item-img'">
+        <app-imager src="{{article?.picture}}" srcMd="{{article?.picture}}" srcSd="{{article?.picture}}"></app-imager>
     </div>
-    <p class="item-date" [class.item-date-important]="idx%4 == 0" mat-line> <span></span><span>{{article.date}}</span></p>
-    <h3 class="item-title" [class.item-title-important]="idx%4 == 0" mat-line> {{article.title}} </h3>
-    <p class="item-summary" [class.item-summary-important]="idx%4 == 0" mat-line>{{article.summary}}</p>
+    <p [ngClass]="idx==0 ? 'item-date-important' : 'item-date'" mat-line> <span></span><span>{{article.date}}</span></p>
+    <h3 [ngClass]="idx==0 ? 'item-title-important' : 'item-title'" mat-line> {{article.title}} </h3>
+    <p [ngClass]="idx==0 ? 'item-summary-important' : 'item-summary'" mat-line>{{article.summary}}</p>
   </mat-list-item>
 </mat-list>
 

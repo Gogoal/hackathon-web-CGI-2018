@@ -1,8 +1,12 @@
-import { Component, Inject } from '@angular/core';
-import { ImagerComponent } from '../shared/component/imager/imager.component';
-import { NewsService } from '../core/service/news.service';
-import { Router } from "@angular/router";
+
+import { Component, OnInit, Inject } from '@angular/core';
+import { ImagerComponent} from '../shared/component/imager/imager.component';
+import { ListDataService } from '../core/service/listData.service';
+import { Subscription } from 'rxjs/Subscription';
+import { CategoriesService } from '../core/service/categories.service';
+import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
 
 @Component({
   selector: 'app-home',
@@ -10,7 +14,10 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  public categories = [];
+  public mainCategory: any;
 
   public bandai = 'assets/img/cat_bandai.jpg';
   public manga = 'assets/img/cat_manga.jpg';
@@ -18,58 +25,90 @@ export class HomeComponent {
 
   public ivg = 'assets/img/cat_ivg.png';
   public fav = 'assets/img/cat_favoris.jpg';
-  public counter : number = 0;
-  public opacity : number = 1;
-  public boolBandai : boolean = false;
-  public boolSheronGif : boolean = false;
-  public boolSheronWish : boolean = false;
+  public counter = 0;
+  public opacity = 1;
+  public boolBandai = false;
+  public boolSheronGif = false;
+  public boolSheronWish  = false;
 
-  constructor(private newsServ: NewsService, public dialog: MatDialog) {
+  public users: any;
+  public currentUser: any;
+  public userSubscription: Subscription;
 
-    this.newsServ.getNews().subscribe(
+  constructor(
+    private dataServ: ListDataService,
+    private catServ: CategoriesService
+  ) {}
+
+  ngOnInit() {
+
+    this.users = this.dataServ.getAllUser();
+    this.userSubscription = this.dataServ.getUser().subscribe(
       data => {
-        console.log(data);
-       },
-      err => {
-          console.log(err);
+        if (data) {
+          this.currentUser = data;
+          console.log(this.currentUser);
+        }
       }
     );
 
+    this.getCategories();
+
+    console.log(this.categories);
+  }
+
+  onNav() {
+
+  }
+
+  userClick(user) {
+    this.dataServ.setUser(user);
+  }
+
+  onSuppCat(id) {
+    this.catServ.suppCategories(Number(id) + 1);
+    this.getCategories();
+  }
+
+  getCategories() {
+    const tempdata = this.catServ.getCategories();
+    this.mainCategory = tempdata[0];
+    this.categories = tempdata.slice(1);
   }
 
 
   goHome() {
-    //this.router.navigate(['news']);
+    // this.router.navigate(['news']);
     this.counter += 1;
     console.log(this.counter);
-    if(this.counter === 3) {
-      alert("Tu as trouvé 3 dragons balls !");
+    if (this.counter === 3) {
+      alert('Tu as trouvé 3 dragons balls !');
     }
   }
 
   goLanguage() {
-    //this.router.navigate(['news']);
+    // this.router.navigate(['news']);
     this.counter += 1;
     console.log(this.counter);
-    if(this.counter === 5) {
-      alert("Tu as trouvé 5 dragons balls !");
+    if (this.counter === 5) {
+      alert('Tu as trouvé 5 dragons balls !');
     }
   }
 
   goBookmarks() {
-    //this.router.navigate(['news']);
+    // this.router.navigate(['news']);
     this.counter += 1;
     console.log(this.counter);
-    if(this.counter === 6) {
-      alert("Tu as trouvé 6 dragons balls !");
+    if (this.counter === 6) {
+      alert('Tu as trouvé 6 dragons balls !');
     }
   }
 
   goAutorenew() {
-    //this.router.navigate(['news']);
+    // this.router.navigate(['news']);
     this.counter += 1;
     console.log(this.counter);
-    if(this.counter === 7) {
+    if (this.counter === 7) {
       this.boolBandai = true;
 
       setTimeout(function() {
@@ -88,36 +127,7 @@ export class HomeComponent {
     }
   }
 
-  pickDataUser1() {
-    //this.router.navigate(['news']);
-  }
 
-  pickDataUser2() {
-    //this.router.navigate(['news']);
-  }
-
-  pickDataUser3() {
-    //this.router.navigate(['news']);
-  }
-
-
-  // TODO ADD A DIALOG
-  openDialog(): void {
-    let dialogRef = this.dialog.open(HomeComponent, {
-      width: '250px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
 
 }
 
-// @Component({
-//   selector: 'dialog-data-example-dialog',
-//   templateUrl: 'dialog-data-example-dialog.html',
-// })
-// export class DialogDataExampleDialog {
-//   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
-// }
