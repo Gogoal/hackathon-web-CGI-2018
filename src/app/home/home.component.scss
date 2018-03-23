@@ -63,3 +63,27 @@
   text-align: center;
   margin-top:8px;
 }
+
+.bandai-logo-easter-eggs {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: 150px;
+  z-index: 10000 !important;
+}
+
+.sheronGif {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: 150px;
+  z-index: 100000 !important;
+}
+
+.sheronWish {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  bottom: 235px;
+  z-index: 100000 !important;
+}

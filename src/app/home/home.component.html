@@ -44,22 +44,34 @@
                 FAVORIS
             </div>
         </div>
+
       <div class="full-circle"><i class="material-icons md-light iconAdd" (click)="addCategory()">add</i></div>
+      <img *ngIf="boolBandai" class="bandai-logo-easter-eggs" id="elementToSlide" src="../../assets/img/bandai-animated.svg">
+      <img *ngIf="boolSheronGif" class="sheronGif" src="../../assets/img/sheronGif.gif">
+      <img *ngIf="boolSheronWish" class="sheronWish" src="../../assets/img/sheronWish.gif">
 
     </div>
     <div class="customFooter">
         <mat-grid-list cols="5" rowHeight="1.9:1">
             <mat-grid-tile>
-                    <i class="material-icons md-light" (click)="goHome()">home</i>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goHome()">home</i>
+              </button>
             </mat-grid-tile>
             <mat-grid-tile>
-                    <i class="material-icons md-light">language</i>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goLanguage()">language</i>
+              </button>
             </mat-grid-tile>
             <mat-grid-tile>
-                    <i class="material-icons md-light">favorite_border</i>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goBookmarks()">favorite_border</i>
+              </button>
             </mat-grid-tile>
             <mat-grid-tile>
-                    <i class="material-icons md-light">autorenew</i>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goAutorenew()">autorenew</i>
+              </button>
             </mat-grid-tile>
             <mat-grid-tile>
               <button mat-button [matMenuTriggerFor]="menu">
