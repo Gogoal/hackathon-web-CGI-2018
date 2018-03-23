@@ -7,11 +7,11 @@
    "language":"french",
    "tags":[
       {
-         "tag":"Ni no kuni",
+         "tag":"annonce",
          "weight":1000
       },
       {  
-         "tag":"Sword Art Online",
+         "tag":"nintendo",
          "weight":1000
       },
       {  
@@ -40,7 +40,7 @@
    "language":"french",
    "tags":[  
       {  
-         "tag":"Ni no kuni",
+         "tag":"toto",
          "weight":3100
       },
       {  
@@ -88,6 +88,10 @@
    "password":"Neo",
    "language":"french",
    "tags":[  
+    {  
+         "tag":"pc",
+         "weight":10000
+      },
       {  
          "tag":"matrix",
          "weight":3100

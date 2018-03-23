@@ -1,4 +1,7 @@
-    <section class="container">
+<section class="container">
+  <mat-toolbar style="z-index: 10000; position:absolute;">
+    <i class="material-icons" style="margin-right: 10px;" (click)="onBack()">arrow_back</i>
+  </mat-toolbar>
     <mat-card class="example-card">
         <img mat-card-image class="newsPicture" src="{{news.picture}}" alt="Photo of {{news.title}}">
         <mat-card-header style="margin-top:15px; margin-bottom:10px; z-index:1000;">
@@ -13,12 +16,8 @@
         <mat-card-actions>
             <button mat-button>SHARE</button>
             <button mat-button>FAVORITE</button>
-            <button (click)="addPonderation()" mat-button>LIKE</button>
-            <button (click)="removePonderation()" mat-button>DISLIKE</button>
-            
-            <!--<button mat-button (click)="itLikes()" *ngIf="isLike">LIKE</button>
-            <button mat-button (click)="itDislikes()" *ngIf="isDislike">DISLIKE</button>-->
-
+            <button mat-button (click)="manageWeight('like')" *ngIf="isLike">LIKE</button>
+            <button mat-button (click)="manageWeight('dislike')" *ngIf="isDislike">DISLIKE</button>
         </mat-card-actions>
     </mat-card>
 

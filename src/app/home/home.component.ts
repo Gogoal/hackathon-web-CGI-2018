@@ -39,7 +39,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private dataServ: ListDataService,
     private catServ: CategoriesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -59,8 +60,8 @@ export class HomeComponent implements OnInit {
     console.log(this.categories);
   }
 
-  onNav() {
-
+  onNav(cat) {
+    this.router.navigate(['/news/' + cat.name + '/' ]);
   }
 
   userClick(user) {
