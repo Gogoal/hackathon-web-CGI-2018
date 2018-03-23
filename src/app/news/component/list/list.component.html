@@ -1,5 +1,8 @@
 <section class="container">
-
+  <mat-toolbar>
+    <i class="material-icons" style="margin-right: 10px;" (click)="onBack()">arrow_back</i>
+    <span style="text-transform: uppercase;">{{currentCategory}}</span>
+  </mat-toolbar>
   <mat-list class="container-list">
     <mat-list-item *ngFor="let article of articles; let idx=index"
                    (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"

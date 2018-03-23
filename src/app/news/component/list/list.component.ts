@@ -25,7 +25,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataServ: ListDataService
+    private dataServ: ListDataService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -76,6 +77,10 @@ export class ListComponent implements OnInit {
 
     // toggle article visibility
     // this.articles.forEach((x, i) => x.visible = (i === nextIndex));
+  }
+
+  onBack() {
+    this.router.navigate(['/home']);
   }
 
 }
