@@ -19,15 +19,19 @@ export class DetailComponent implements OnInit {
   public currentUser: any;
   public userSubscription: Subscription;
 
+  public currentCategory: any;
+
   constructor(
     private route: ActivatedRoute,
-    private dataServ: ListDataService
+    private dataServ: ListDataService,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(
       params => {
         this.currentId = params['id'];
+        this.currentCategory = params['rubrique'];
         this.news = this.dataServ.getNewsById(this.currentId);
       }
     );
@@ -51,7 +55,11 @@ export class DetailComponent implements OnInit {
     const removePonderation = 20;
 
   }
-  
+
+  onBack() {
+    this.router.navigate(['/news/' + this.currentCategory ]);
+  }
+
   public isLike: boolean = true;
   public isDislike: boolean = false;
 
