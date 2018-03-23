@@ -42,6 +42,16 @@ export class DetailComponent implements OnInit {
 
   }
 
+  addPonderation(){
+    const addPonderation = 50;
+    console.log(this.news);
+  }
+
+  removePonderation(){
+    const removePonderation = 20;
+
+  }
+  
   public isLike: boolean = true;
   public isDislike: boolean = false;
 

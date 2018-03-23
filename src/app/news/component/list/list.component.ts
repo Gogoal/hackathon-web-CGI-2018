@@ -33,6 +33,7 @@ export class ListComponent implements OnInit {
       params => {
         this.currentCategory = params['rubrique'];
         this.articles = this.dataServ.getNewsByCategory(this.currentCategory);
+        console.log(this.articles);
       }
     );
 
