@@ -1,6 +1,6 @@
 <mat-card class="example-card">
     <img mat-card-image class="newsPicture" src="{{news.picture}}" alt="Photo of {{news.title}}">
-    <mat-card-header style="margin-top:-51px; margin-bottom:30px; z-index:1000;">
+    <mat-card-header style="margin-top:15px; margin-bottom:10px; z-index:1000;">
         <mat-card-title class="cardTitle">{{news.title}}</mat-card-title>
         <mat-card-subtitle class="cardSubTitle">{{news.auteur}} - {{news.date}}</mat-card-subtitle>
     </mat-card-header>
@@ -12,8 +12,8 @@
     <mat-card-actions>
         <button mat-button>SHARE</button>
         <button mat-button>FAVORITE</button>
-        <button mat-button>LIKE</button>
-        <button mat-button>DISLIKE</button>
+        <button mat-button (click)="itLikes()" *ngIf="isLike">LIKE</button>
+        <button mat-button (click)="itDislikes()" *ngIf="isDislike">DISLIKE</button>
     </mat-card-actions>
 </mat-card>
 
