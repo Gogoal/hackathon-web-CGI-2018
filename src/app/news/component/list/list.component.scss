@@ -10,7 +10,7 @@
 .mat-list .mat-list-item.item-list-important {
   height: 200px;
   width:100%;
-  background-color:blue;
+  background: linear-gradient(to bottom, red , #FFAD00);
 }
 
 .item-img {
@@ -18,10 +18,6 @@
   height:50px;
   // background-color: blue;
   display: inline-block;
-}
-
-.item-img-important {
-  display:none;
 }
 
 .mat-list .mat-list-item p.item-summary {
@@ -70,8 +66,25 @@
   display: none;
 }
 
-.firstOne {
+// DEAL WITH IMAGE
+.mainCat {
+  position: relative;
+}
 
+.catWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 60vh;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.catItem {
+  width: 50vw;
+  height: 30vh;
+  position: relative;
 }
 
 .customFooter {
