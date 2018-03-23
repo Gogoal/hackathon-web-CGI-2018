@@ -1,69 +1,65 @@
 <section class="container">
-  <div class="mainCat">
-    <app-imager src="{{mainCategory?.news.picture}}" srcMd="{{mainCategory?.news.picture}}" srcSd="{{mainCategory?.news.picture}}"></app-imager>
-    <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%"></div>
-    <div style="position: absolute;z-index: 3;bottom: 0;left:10px;color: white;text-transform: uppercase">{{mainCategory?.displayName}}</div>
-    <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;top:0;padding-left: 10px">
-      <div style="max-width: 200px;">{{mainCategory?.news.title}}</div>
-    </div>
-
-  </div>
-  <div class="catWrapper">
-
-    <div *ngFor="let cat of categories; let i = index" class="catItem">
-
-      <app-imager src="{{cat.picture}}" srcMd="{{cat.picture}}" srcSd="{{cat.picture}}"></app-imager>
-
-      <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%"></div>
-      <i (click)="onSuppCat(i)" *ngIf="cat.name !== 'favoris'" style="position: absolute;z-index: 5;right: 20px;top:20px;color: white"
-        class="material-icons">favorite</i>
-      <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;top:0;">
-        <span style="text-transform: uppercase">{{cat.displayName}}</span>
-      </div>
+    <div class="mainCat">
+        <app-imager src="{{mainCategory?.news.picture}}" srcMd="{{mainCategory?.news.picture}}" srcSd="{{mainCategory?.news.picture}}"></app-imager>
+        <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
+        <div style="position: absolute;z-index: 3;bottom: 0;left:10px;color: white;text-transform: uppercase">{{mainCategory?.displayName}}</div>
+        <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;top:0;padding-left: 10px">
+            <div style="max-width: 200px;">{{mainCategory?.news.title}}</div>
+        </div>
 
     </div>
+    <div class="catWrapper">
 
-    <div class="full-circle">
-      <i class="material-icons md-light iconAdd" (click)="addCategory()">add</i>
-    </div>
-    <img *ngIf="boolBandai" class="bandai-logo-easter-eggs" id="elementToSlide" src="../../assets/img/bandai-animated.svg">
-    <img *ngIf="boolSheronGif" class="sheronGif" src="../../assets/img/sheronGif.gif">
-    <img *ngIf="boolSheronWish" class="sheronWish" src="../../assets/img/sheronWish.gif">
-
-  </div>
-  
-  <div class="customFooter">
-      <mat-grid-list cols="5" rowHeight="2.2:1">
-          <mat-grid-tile>
-            <button mat-button>
-              <i class="material-icons md-light" (click)="goHome()">home</i>
-            </button>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <button mat-button>
-              <i class="material-icons md-light" (click)="goLanguage()">language</i>
-            </button>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <button mat-button>
-              <i class="material-icons md-light" (click)="goBookmarks()">favorite_border</i>
-            </button>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <button mat-button>
-              <i class="material-icons md-light" (click)="goAutorenew()">autorenew</i>
-            </button>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <button mat-button [matMenuTriggerFor]="menu">
-              <i class="material-icons md-light">perm_identity</i>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button *ngFor="let user of users; let i = index" mat-menu-item (click)="userClick(i)">{{user.first_name}}</button>
+        <div *ngFor="let cat of categories; let i = index" class="catItem" >
             
-            </mat-menu>
-          </mat-grid-tile>
-      </mat-grid-list>
-    </div>
+            <app-imager src="{{cat.picture}}" srcMd="{{cat.picture}}" srcSd="{{cat.picture}}"></app-imager>
 
+            <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
+            <i (click)="onSuppCat(i)" *ngIf="cat.name !== 'favoris'" style="position: absolute;z-index: 5;right: 20px;top:20px;color: white" class="material-icons">favorite</i>
+            <div style="position: absolute;z-index: 4;color: white;width: 100%;height: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center;top:0;">
+                <span style="text-transform: uppercase">{{cat.displayName}}</span>
+            </div>
+
+        </div>
+    
+    
+      <img *ngIf="boolBandai" class="bandai-logo-easter-eggs" id="elementToSlide" src="../../assets/img/bandai-animated.svg">
+      <img *ngIf="boolSheronGif" class="sheronGif" src="../../assets/img/sheronGif.gif">
+      <img *ngIf="boolSheronWish" class="sheronWish" src="../../assets/img/sheronWish.gif">
+
+    </div>
+    <div class="customFooter">
+        <mat-grid-list cols="5" rowHeight="1.9:1">
+            <mat-grid-tile>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goHome()">home</i>
+              </button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goLanguage()">language</i>
+              </button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="openDialog()">favorite_border</i>
+              </button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <button mat-button>
+                <i class="material-icons md-light" (click)="goAutorenew()">autorenew</i>
+              </button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <button mat-button [matMenuTriggerFor]="menu">
+                <i class="material-icons md-light">perm_identity</i>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button *ngFor="let user of users; let i = index" mat-menu-item (click)="userClick(i)">{{user.first_name}}</button>
+              
+              </mat-menu>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </div>
 </section>
