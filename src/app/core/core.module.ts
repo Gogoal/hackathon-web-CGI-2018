@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HttpModule, Http } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NewsService} from './service/news.service';
+import {ListDataService} from './service/listData.service';
 import { MaterialModule } from '../material/material.module';
+import { CategoriesService } from './service/categories.service';
 
 @NgModule({
     imports: [
@@ -25,7 +26,7 @@ import { MaterialModule } from '../material/material.module';
         BrowserAnimationsModule,
         MaterialModule
     ],
-    providers: [NewsService]
+    providers: [ListDataService, CategoriesService]
 
 })
 export class CoreModule {
