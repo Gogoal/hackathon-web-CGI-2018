@@ -121,11 +121,6 @@ export class HomeComponent implements OnInit {
 
   goBookmarks() {
     // this.router.navigate(['news']);
-    this.counter += 1;
-    console.log(this.counter);
-    if (this.counter === 6) {
-      alert('Tu as trouvé 6 dragons balls !');
-    }
   }
 
   goAutorenew() {

@@ -92,7 +92,22 @@
   bottom: 0;
   height: 5.2vh;
   background-color: #FFAD00;
-  width: 96%;
+  width: 100%;
+}
+
+.container {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.mat-list {
+  padding-top:0px;
 }
 
 /* Rules for using icons as white on a dark background. */
