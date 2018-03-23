@@ -55,9 +55,8 @@
                 <i class="material-icons md-light">perm_identity</i>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="pickDataUser1()">User 1</button>
-                <button mat-menu-item (click)="pickDataUser2()">User 2</button>
-                <button mat-menu-item (click)="pickDataUser3()">User 3</button>
+                <button *ngFor="let user of users; let i = index" mat-menu-item (click)="userClick(i)">{{user.first_name}}</button>
+              
               </mat-menu>
             </mat-grid-tile>
         </mat-grid-list>

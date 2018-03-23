@@ -3,7 +3,9 @@
                  (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
                  [class.item-list-important]="idx%4 == 0">
     <div mat-card-avatar class="item-img" [class.item-img-important]="idx%4 == 0">
-      <img src="{{article.picture}}">
+
+      <app-imager src="{{article?.picture}}" srcMd="{{article?.picture}}" srcSd="{{article?.picture}}"></app-imager>
+
     </div>
     <p class="item-date" [class.item-date-important]="idx%4 == 0" mat-line> <span></span><span>{{article.date}}</span></p>
     <h3 class="item-title" [class.item-title-important]="idx%4 == 0" mat-line> {{article.title}} </h3>
