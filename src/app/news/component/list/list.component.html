@@ -1,11 +1,11 @@
 <mat-list class="container-list">
-  <mat-list-item class="item-list" *ngFor="let article of articles; let idx=index"
+  <mat-list-item *ngFor="let article of articles; let idx=index"
                  (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
-
-                 [ngClass]="idx==0 ? 'item-list-important' : 'item-list'">
+                 [ngClass]="idx==0 ? 'item-list-important mainCat' : 'item-list'">
     <div mat-card-avatar [ngClass]="idx==0 ? 'item-img-important' : 'item-img'">
-        <app-imager src="{{article?.picture}}" srcMd="{{article?.picture}}" srcSd="{{article?.picture}}"></app-imager>
+        <app-imager src="{{article?.picture}}" *ngIf="idx==0 ? false : true" srcMd="{{article?.picture}}" srcSd="{{article?.picture}}"></app-imager>
     </div>
+    <app-imager src="{{article?.picture}}" *ngIf="idx==0 ? true : false" srcMd="{{article?.picture}}" srcSd="{{article?.picture}}"></app-imager>
     <p [ngClass]="idx==0 ? 'item-date-important' : 'item-date'" mat-line> <span></span><span>{{article.date}}</span></p>
     <h3 [ngClass]="idx==0 ? 'item-title-important' : 'item-title'" mat-line> {{article.title}} </h3>
     <p [ngClass]="idx==0 ? 'item-summary-important' : 'item-summary'" mat-line>{{article.summary}}</p>
