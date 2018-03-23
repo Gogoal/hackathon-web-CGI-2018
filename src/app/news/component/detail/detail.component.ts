@@ -51,5 +51,25 @@ export class DetailComponent implements OnInit {
     const removePonderation = 20;
 
   }
+  
+  public isLike: boolean = true;
+  public isDislike: boolean = false;
+
+  itLikes() {
+    console.log("like");
+    this.isLike = false;
+    this.isDislike = true;
+
+    //todo : Add +50.
+  }
+
+  itDislikes() {
+    console.log("dislike");
+    this.isLike = true;
+    this.isDislike = false;
+
+    //todo : substract -20.
+  }
+
 }
 
