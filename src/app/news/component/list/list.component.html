@@ -4,7 +4,7 @@
     <span style="text-transform: uppercase;">{{currentCategory}}</span>
   </mat-toolbar>
   <mat-list class="container-list">
-    <mat-list-item *ngFor="let article of articles; let idx=index"
+    <mat-list-item *ngFor="let article of articles; let idx=index" (click)="onNav(article.UID)"
                    (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
                    [ngClass]="idx==0 ? 'item-list-important mainCat' : 'item-list'">
       <div mat-card-avatar [ngClass]="idx==0 ? 'item-img-important' : 'item-img'">

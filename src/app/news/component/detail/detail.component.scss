@@ -40,6 +40,7 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 .container {
+  overflow: scroll;
   position: fixed;
   top:0;
   left:0;
@@ -47,5 +48,8 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
+}
 
+.containerCard {
+  overflow: scroll;
 }
