@@ -83,7 +83,7 @@ export class ImagerComponent {
           console.log('>>> Moyen ecran');
           if (this._srcMd) {
             tempUrl = this._srcMd;
-          }else {
+          } else {
             tempUrl = this._src;
           }
           break;
@@ -92,7 +92,7 @@ export class ImagerComponent {
           console.log('>>> Petit ecran' + currentBreakpoint);
           if (this._srcSd) {
           tempUrl = this._srcSd;
-          }else {
+          } else {
             tempUrl = this._src;
           }
           break;

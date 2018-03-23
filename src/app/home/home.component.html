@@ -10,7 +10,7 @@
     </div>
     <div class="catWrapper">
 
-        <div *ngFor="let cat of categories; let i = index" class="catItem" >
+        <div *ngFor="let cat of categories; let i = index" class="catItem" (click)="onNav(cat)">
             
             <app-imager src="{{cat.picture}}" srcMd="{{cat.picture}}" srcSd="{{cat.picture}}"></app-imager>
 

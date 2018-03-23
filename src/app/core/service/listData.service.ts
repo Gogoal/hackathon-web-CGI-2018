@@ -89,6 +89,34 @@ export class ListDataService {
     return this.users;
   }
 
+  addWeight(id) {
+
+    const tempData = this.news[id];
+    tempData.community_weight += 50;
+
+  }
+
+  removeWeight(id) {
+    const tempData = this.news[id];
+    tempData.community_weight -= 20;
+  }
+
+  modifyNewsWeight(id, value) {
+
+    for (let index = 0; index < this.news.length; index++) {
+      const element = this.news[index];
+
+      if (element.UID === id) {
+        element.community_weight = value;
+        break;
+      }
+
+    }
+
+    console.log(this.news);
+
+  }
+
 
 }
 

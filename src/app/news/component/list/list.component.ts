@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ListDataService } from '../../../core/service/listData.service';
 import { Subscription } from 'rxjs/Subscription';
 import {Router, ActivatedRoute, Params} from '@angular/router';
@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
   public currentCategory: string;
   public imgBoolean = false;
 
+  public users: any;
   public currentUser: any;
   public userSubscription: Subscription;
   articles = [];
@@ -25,24 +26,74 @@ export class ListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataServ: ListDataService
+    private dataServ: ListDataService,
+    private ref: ChangeDetectorRef,
+    private router: Router,
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(
       params => {
         this.currentCategory = params['rubrique'];
-        this.articles = this.dataServ.getNewsByCategory(this.currentCategory);
+
+        this.articles = this.dataServ.getNewsByCategory(this.currentCategory).sort(this.compare);
+        console.log('>>> article', this.articles);
       }
     );
 
     this.userSubscription = this.dataServ.getUser().subscribe(
       data => {
         if (data) {
+          this.users = this.dataServ.getAllUser();
           this.currentUser = data;
+
+          console.log('>>> user', this.currentUser);
+
+          const tempUserTag =  this.currentUser.tags;
+
+          for (let index = 0; index < this.articles.length; index++) {
+            const news = this.articles[index];
+
+            const tempNewsTag = news.tags;
+
+            for (let index2 = 0; index2 < tempNewsTag.length; index2++) {
+              const newsTag = tempNewsTag[index2];
+
+              for (let index3 = 0; index3 < tempUserTag.length; index3++) {
+                const userTags = tempUserTag[index3];
+
+                if (userTags.tag === newsTag) {
+                    const temp = Number(news.community_weight) + Number(userTags.weight);
+                    news.community_weight = temp;
+                   this.dataServ.modifyNewsWeight(news.UID, news.community_weight);
+                }
+
+
+
+              }
+
+            }
+
+          }
+
         }
+
+        console.log('>>>>> algo', this.articles);
+        this.articles = this.dataServ.getNewsByCategory(this.currentCategory).sort(this.compare);
+        this.ref.detectChanges();
       }
     );
+
+  }
+
+   compare(a, b) {
+    if (a.community_weight > b.community_weight) {
+      return -1;
+    }
+    if (a.community_weight < b.community_weight) {
+      return 1;
+    }
+    return 0;
   }
 
   // action triggered when user swipes
@@ -75,6 +126,14 @@ export class ListComponent implements OnInit {
 
     // toggle article visibility
     // this.articles.forEach((x, i) => x.visible = (i === nextIndex));
+  }
+
+  userClick(user) {
+    this.dataServ.setUser(user);
+  }
+
+  onNav(id) {
+    this.router.navigate(['/news/' + this.currentCategory + '/' + id ]);
   }
 
 }

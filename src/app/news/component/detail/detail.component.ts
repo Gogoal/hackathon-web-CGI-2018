@@ -41,5 +41,14 @@ export class DetailComponent implements OnInit {
     );
 
   }
+
+  mangeWeight(type) {
+    if (type === 'like') {
+      this.dataServ.addWeight(this.currentId);
+    } else {
+      this.dataServ.removeWeight(this.currentId);
+    }
+
+  }
 }
 

@@ -12,8 +12,8 @@
     <mat-card-actions>
         <button mat-button>SHARE</button>
         <button mat-button>FAVORITE</button>
-        <button mat-button>LIKE</button>
-        <button mat-button>DISLIKE</button>
+        <button mat-button (click)="manageWeight('like')">LIKE</button>
+        <button mat-button (click)="manageWeight('dislike')">DISLIKE</button>
     </mat-card-actions>
 </mat-card>
 
