@@ -7,6 +7,18 @@
     background-size: cover;
   }
 
+  .cardTitle {
+    font-family: main-title;
+  }
+
+  .cardSubTitle {
+    font-family: title-category;
+  }
+
+  .cardSummary {
+    font-family: title-item-list;
+  }
+
   .customFooter {
     position: fixed;
     bottom: 0;
