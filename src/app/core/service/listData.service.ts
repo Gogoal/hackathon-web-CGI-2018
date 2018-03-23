@@ -85,6 +85,10 @@ export class ListDataService {
     return this.subject.asObservable();
   }
 
+  getAllUser() {
+    return this.users;
+  }
+
 
 }
 

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   public boolSheronGif = false;
   public boolSheronWish  = false;
 
-
+  public users: any;
   public currentUser: any;
   public userSubscription: Subscription;
 
@@ -41,10 +41,13 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    this.users = this.dataServ.getAllUser();
     this.userSubscription = this.dataServ.getUser().subscribe(
       data => {
         if (data) {
           this.currentUser = data;
+          console.log(this.currentUser);
         }
       }
     );
@@ -56,6 +59,10 @@ export class HomeComponent implements OnInit {
 
   onNav() {
 
+  }
+
+  userClick(user) {
+    this.dataServ.setUser(user);
   }
 
   onSuppCat(id) {

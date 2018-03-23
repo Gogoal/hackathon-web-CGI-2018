@@ -33,38 +33,37 @@
   </div>
   
   <div class="customFooter">
-    <mat-grid-list cols="5" rowHeight="1.9:1">
-      <mat-grid-tile>
-        <button mat-button>
-          <i class="material-icons md-light" (click)="goHome()">home</i>
-        </button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-button>
-          <i class="material-icons md-light" (click)="goLanguage()">language</i>
-        </button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-button>
-          <i class="material-icons md-light" (click)="goBookmarks()">favorite_border</i>
-        </button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-button>
-          <i class="material-icons md-light" (click)="goAutorenew()">autorenew</i>
-        </button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <button mat-button [matMenuTriggerFor]="menu">
-          <i class="material-icons md-light">perm_identity</i>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="pickDataUser1()">User 1</button>
-          <button mat-menu-item (click)="pickDataUser2()">User 2</button>
-          <button mat-menu-item (click)="pickDataUser3()">User 3</button>
-        </mat-menu>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
+      <mat-grid-list cols="5" rowHeight="2.2:1">
+          <mat-grid-tile>
+            <button mat-button>
+              <i class="material-icons md-light" (click)="goHome()">home</i>
+            </button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-button>
+              <i class="material-icons md-light" (click)="goLanguage()">language</i>
+            </button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-button>
+              <i class="material-icons md-light" (click)="goBookmarks()">favorite_border</i>
+            </button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-button>
+              <i class="material-icons md-light" (click)="goAutorenew()">autorenew</i>
+            </button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-button [matMenuTriggerFor]="menu">
+              <i class="material-icons md-light">perm_identity</i>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button *ngFor="let user of users; let i = index" mat-menu-item (click)="userClick(i)">{{user.first_name}}</button>
+            
+            </mat-menu>
+          </mat-grid-tile>
+      </mat-grid-list>
+    </div>
 
 </section>

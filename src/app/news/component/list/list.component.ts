@@ -14,6 +14,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 export class ListComponent implements OnInit {
 
   public currentCategory: string;
+  public imgBoolean = false;
 
   public currentUser: any;
   public userSubscription: Subscription;
