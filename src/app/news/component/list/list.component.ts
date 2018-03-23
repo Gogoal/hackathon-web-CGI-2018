@@ -80,7 +80,7 @@ export class ListComponent implements OnInit {
 
         console.log('>>>>> algo', this.articles);
         this.articles = this.dataServ.getNewsByCategory(this.currentCategory).sort(this.compare);
-        //this.ref.detectChanges();
+        // this.ref.detectChanges();
       }
     );
 
