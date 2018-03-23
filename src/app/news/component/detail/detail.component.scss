@@ -7,6 +7,26 @@
     background-size: cover;
   }
 
+  .newsPicture {
+    margin-bottom: -50px;
+  }
+
+  .cardTitle {
+    font-family: main-title;
+    color: white;
+    font-size: 18px;
+  }
+
+  .cardSubTitle {
+    font-family: title-category;
+    color: white;
+    font-size: 16px;
+  }
+
+  .cardSummary {
+    font-family: title-item-list;
+  }
+
   .customFooter {
     position: fixed;
     bottom: 0;
