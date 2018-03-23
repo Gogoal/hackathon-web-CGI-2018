@@ -12,7 +12,40 @@
     <mat-card-actions>
         <button mat-button>SHARE</button>
         <button mat-button>FAVORITE</button>
-        <button mat-button>LIKE</button>
-        <button mat-button>DISLIKE</button>
+        <button (click)="addPonderation()" mat-button>LIKE</button>
+        <button (click)="removePonderation()" mat-button>DISLIKE</button>
     </mat-card-actions>
 </mat-card>
+
+<div class="customFooter">
+    <mat-grid-list cols="5" rowHeight="2.2:1">
+        <mat-grid-tile>
+            <button mat-button>
+                <i class="material-icons md-light" (click)="goHome()">home</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button>
+                <i class="material-icons md-light" (click)="goLanguage()">language</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button>
+                <i class="material-icons md-light" (click)="goBookmarks()">favorite_border</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button>
+                <i class="material-icons md-light" (click)="goAutorenew()">autorenew</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button [matMenuTriggerFor]="menu">
+                <i class="material-icons md-light">perm_identity</i>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button *ngFor="let user of users; let i = index" mat-menu-item (click)="userClick(i)">{{user.first_name}}</button>
+            </mat-menu>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

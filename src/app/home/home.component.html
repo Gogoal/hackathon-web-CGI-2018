@@ -22,7 +22,7 @@
 
         </div>
     
-      <div class="full-circle"><i class="material-icons md-light iconAdd" (click)="addCategory()">add</i></div>
+    
       <img *ngIf="boolBandai" class="bandai-logo-easter-eggs" id="elementToSlide" src="../../assets/img/bandai-animated.svg">
       <img *ngIf="boolSheronGif" class="sheronGif" src="../../assets/img/sheronGif.gif">
       <img *ngIf="boolSheronWish" class="sheronWish" src="../../assets/img/sheronWish.gif">
@@ -42,7 +42,7 @@
             </mat-grid-tile>
             <mat-grid-tile>
               <button mat-button>
-                <i class="material-icons md-light" (click)="goBookmarks()">favorite_border</i>
+                <i class="material-icons md-light" (click)="openDialog()">favorite_border</i>
               </button>
             </mat-grid-tile>
             <mat-grid-tile>

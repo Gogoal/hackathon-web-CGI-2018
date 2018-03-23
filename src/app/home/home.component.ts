@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { CategoriesService } from '../core/service/categories.service';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { CatModalComponent } from './component/catModal/catModal.component';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private dataServ: ListDataService,
-    private catServ: CategoriesService
+    private catServ: CategoriesService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -74,6 +76,28 @@ export class HomeComponent implements OnInit {
     const tempdata = this.catServ.getCategories();
     this.mainCategory = tempdata[0];
     this.categories = tempdata.slice(1);
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CatModalComponent, {
+      width: '250px',
+      data: {  }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      const tempData = {
+        name: result,
+        displayName: result,
+        id: this.categories.length,
+        order: this.categories.length,
+        picture: '',
+        news: ''
+      };
+      this.catServ.addCategories(tempData);
+      this.getCategories();
+
+    });
   }
 
 
