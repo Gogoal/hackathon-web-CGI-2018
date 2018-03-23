@@ -147,6 +147,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  onMainClick() {
+
+    this.router.navigate(['/news/bandai']);
+  }
+
 
 
 }

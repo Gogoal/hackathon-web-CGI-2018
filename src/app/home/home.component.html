@@ -1,5 +1,5 @@
 <section class="container">
-    <div class="mainCat">
+    <div class="mainCat" (click)="onMainClick()">
         <app-imager src="{{mainCategory?.news.picture}}" srcMd="{{mainCategory?.news.picture}}" srcSd="{{mainCategory?.news.picture}}"></app-imager>
         <div style="position: absolute;z-index: 2;background-color: rgba(0, 0, 0, 0.5);;top:0;width: 100%;height: 100%" ></div>
         <div style="position: absolute;z-index: 3;bottom: 0;left:10px;color: white;text-transform: uppercase">{{mainCategory?.displayName}}</div>
