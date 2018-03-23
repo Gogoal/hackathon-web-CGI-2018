@@ -2,8 +2,9 @@
   <mat-list-item class="item-list" *ngFor="let article of articles; let idx=index"
                  (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"
                  [class.item-list-important]="idx%4 == 0">
-    <div mat-card-avatar class="item-img" [class.item-img-important]="idx%4 == 0"></div>
-    <!-- <img matListAvatar src="..." alt="..."> -->
+    <div mat-card-avatar class="item-img" [class.item-img-important]="idx%4 == 0">
+      <img src="{{article.picture}}">
+    </div>
     <p class="item-date" [class.item-date-important]="idx%4 == 0" mat-line> <span></span><span>{{article.date}}</span></p>
     <h3 class="item-title" [class.item-title-important]="idx%4 == 0" mat-line> {{article.title}} </h3>
     <p class="item-summary" [class.item-summary-important]="idx%4 == 0" mat-line>{{article.summary}}</p>

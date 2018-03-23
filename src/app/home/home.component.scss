@@ -41,3 +41,49 @@
     background-color: #FFAD00;
     width: 100%;
 }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.full-circle {
+  background-color: #FFAD00;
+  height: 40px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  width: 40px;
+  position: absolute;
+  z-index: 10000 ! important;
+  bottom: 40px;
+  right: 5px;
+}
+
+.iconAdd {
+  display: block;
+  text-align: center;
+  margin-top:8px;
+}
+
+.bandai-logo-easter-eggs {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: 150px;
+  z-index: 10000 !important;
+}
+
+.sheronGif {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: 150px;
+  z-index: 100000 !important;
+}
+
+.sheronWish {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  bottom: 235px;
+  z-index: 100000 !important;
+}

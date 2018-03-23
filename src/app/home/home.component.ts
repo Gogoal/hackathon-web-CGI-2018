@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, OnInit, Inject } from '@angular/core';
 import { ImagerComponent} from '../shared/component/imager/imager.component';
 import { ListDataService } from '../core/service/listData.service';
 import { Subscription } from 'rxjs/Subscription';
 import { CategoriesService } from '../core/service/categories.service';
+import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls:  ['./home.component.scss']
+  styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent implements OnInit {
@@ -20,6 +25,12 @@ export class HomeComponent implements OnInit {
 
   public ivg = 'assets/img/cat_ivg.png';
   public fav = 'assets/img/cat_favoris.jpg';
+  public counter = 0;
+  public opacity = 1;
+  public boolBandai = false;
+  public boolSheronGif = false;
+  public boolSheronWish  = false;
+
 
   public currentUser: any;
   public userSubscription: Subscription;
@@ -59,4 +70,57 @@ export class HomeComponent implements OnInit {
   }
 
 
+  goHome() {
+    // this.router.navigate(['news']);
+    this.counter += 1;
+    console.log(this.counter);
+    if (this.counter === 3) {
+      alert('Tu as trouvé 3 dragons balls !');
+    }
+  }
+
+  goLanguage() {
+    // this.router.navigate(['news']);
+    this.counter += 1;
+    console.log(this.counter);
+    if (this.counter === 5) {
+      alert('Tu as trouvé 5 dragons balls !');
+    }
+  }
+
+  goBookmarks() {
+    // this.router.navigate(['news']);
+    this.counter += 1;
+    console.log(this.counter);
+    if (this.counter === 6) {
+      alert('Tu as trouvé 6 dragons balls !');
+    }
+  }
+
+  goAutorenew() {
+    // this.router.navigate(['news']);
+    this.counter += 1;
+    console.log(this.counter);
+    if (this.counter === 7) {
+      this.boolBandai = true;
+
+      setTimeout(function() {
+        this.boolBandai = false;
+        this.boolSheronGif = true;
+      }.bind(this), 3000);
+
+      setTimeout(function() {
+        this.boolSheronGif = false;
+        this.boolSheronWish = true;
+      }.bind(this), 19000);
+
+      setTimeout(function() {
+        this.boolSheronWish = false;
+      }.bind(this), 30000);
+    }
+  }
+
+
+
 }
+

@@ -8,7 +8,8 @@
 "category": "ivg",
 "tags":["violence","scientifique","étude", "jeux vidéos"],
 "community_weight": 2512,
-"auteur":"Michaël John McLane"
+"auteur":"Michaël John McLane",
+"visible":true
 },
 {
 "UID":"2",
@@ -20,7 +21,8 @@
 "category": "ivg",
 "tags": ["war games","sam barlow","her story"],
 "community_weight": 1784,
-"auteur":"Florence Aime les Jeux"
+"auteur":"Florence Aime les Jeux",
+"visible":true
 },
 {
 "UID":"3",
@@ -32,7 +34,8 @@
 "category": "ivg",
 "tags": ["ubisoft","vivendi","tencent", "alliance", "industrie"],
 "community_weight": 815,
-"auteur":"Julien Bergounhoux"
+"auteur":"Julien Bergounhoux",
+"visible":true
 },
 {
 "UID":"4",
@@ -44,7 +47,8 @@
 "category": "manga",
 "tags": ["ace attorney","manga","série"],
 "community_weight": 385,
-"auteur":"Nathalie"
+"auteur":"Nathalie",
+"visible":true
 },
 {
 "UID":"5",
@@ -56,7 +60,8 @@
 "category": "manga",
 "tags": ["princesse arete","manga","oav", "dans un recoin de ce monde"],
 "community_weight": 1128,
-"auteur":"Nathalie"
+"auteur":"Nathalie",
+"visible":true
 },
 {
 "UID":"6",
@@ -68,7 +73,8 @@
 "category": "manga",
 "tags": ["dragon ball","naganime tatsuya","oav", "dragon ball super", "goku", "baston"],
 "community_weight": 2112,
-"auteur":"toei animation"
+"auteur":"toei animation",
+"visible":true
 },
 {
 "UID":"7",
@@ -80,7 +86,8 @@
 "category": "bandai",
 "tags": ["annonce","jeux","nintendo", "switch", "project x zone 3"],
 "community_weight": 1588,
-"auteur":"Romain Mahut "
+"auteur":"Romain Mahut ",
+"visible":true
 },
 {
 "UID":"8",
@@ -91,7 +98,8 @@
 "category": "bandai",
 "tags": ["little nightmares","playstation 4","xbox one", "pc", "annonce"],
 "community_weight": 854,
-"auteur":"Florence Aime les Jeux"
+"auteur":"Florence Aime les Jeux",
+"visible":true
 },
 {
 "UID":"9",
@@ -102,7 +110,8 @@
 "category": "bandai",
 "tags": ["one piece","playstation 4","xbox one", "pc", "annonce", "world seeker"],
 "community_weight": 987,
-"auteur":"Florence Aime les Jeux"
+"auteur":"Florence Aime les Jeux",
+"visible":true
 },
 {
 "UID":"10",
@@ -114,7 +123,8 @@
 "category": "mobile",
 "tags": ["tekken","ios","baston", "android"],
 "community_weight": 823,
-"auteur":"Gianni Molinaro"
+"auteur":"Gianni Molinaro",
+"visible":true
 },
 {
 "UID":"11",
@@ -126,7 +136,8 @@
 "category": "mobile",
 "tags": ["dragon ball","akira toriyama", "baston", "android"],
 "community_weight": 546,
-"auteur":"Gianni Molinaro"
+"auteur":"Gianni Molinaro",
+"visible":true
 },
 {
 "UID":"12",
@@ -138,5 +149,6 @@
 "category": "mobile",
 "tags": ["warner bros","harry potter", "hogwarts mystery", "android", "ios", "rpg"],
 "community_weight": 475,
-"auteur":"ChewbieFR"
+"auteur":"ChewbieFR",
+"visible":true
 }]
