@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ListDataService } from '../../../core/service/listData.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-detail',
@@ -6,16 +9,33 @@ import { Component } from '@angular/core';
   styleUrls:  ['./detail.component.scss']
 })
 
-export class DetailComponent {
+export class DetailComponent implements OnInit {
 
-  public news = {
-    'title': 'DRAGON BALL FighterZ (title)',
-    'subtitle': 'True Power Knows No Limits ! (auteur + category + date)',
-    'picture':'http://i2.wp.com/shoryuken.com/wp-content/uploads/2017/10/dragon_ball_fighterz_cover_750.jpg',
-    'description':'(summary) After the success of the Xenoverse series, it’s time to introduce a new classic 2D DRAGON BALL fighting game for this generation’s consoles. DRAGON BALL FighterZ is born from what makes the DRAGON BALL series so loved and famous: endless spectacular fights with its allpowerful fighters. Partnering with Arc System Works, DRAGON BALL FighterZ maximizes high end Anime graphics and brings easy to learn but difficult to master fighting gameplay to audiences worldwide.'
+  public currentId: any;
+  public news: any;
+
+  public currentUser: any;
+  public userSubscription: Subscription;
+
+  constructor(
+    private route: ActivatedRoute,
+    private dataServ: ListDataService
+  ) {}
+
+  ngOnInit() {
+    this.route.params.subscribe(
+      params => {
+        this.currentId = params['id'];
+        this.news = this.dataServ.getNewsById(this.currentId);
+      }
+    );
+
+    this.userSubscription = this.dataServ.getUser().subscribe(
+      data => {
+        if (data) {
+          this.currentUser = data;
+        }
+      }
+    );
   }
-
-    constructor() {
-
-    }
 }
